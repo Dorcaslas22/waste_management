@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:waste_management/signup_screen/otp2.dart';
+import 'package:waste_management/signup_screen/formscreen_controller.dart';
 
 import '../login_screen/login.dart';
 import '../login_screen/otp_screen.dart';

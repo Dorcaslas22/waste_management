@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:waste_management/screens/inputfield.dart';
-import 'package:waste_management/screens/schedule_pickup.dart';
+import 'package:waste_management/screens/recycle_screen/schedule_pickup_screen.dart';
+import 'package:waste_management/screens/waste_screen/schedule_pickup.dart';
+import 'package:waste_management/widgets/step_Indicator.dart';
 
 class ScheduleScreen extends StatefulWidget {
   const ScheduleScreen({super.key,});
@@ -31,10 +33,15 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              InputField(
-                  title: "Weight(kg)", hint: "Enter approximate weight in kg"),
+              StepIndicator(),
+              SizedBox(height: 10),
+              // InputField(
+              //     title: "Weight(kg)", hint: "Enter approximate weight in kg",
+              //   controller: TextEditingController(),
+              // ),
               InputField(
                 title: "Pickup Address", hint: "11, Example street, Lagos",
+                controller: TextEditingController(),
                 widget: TextButton(
                     onPressed: () {},
                     child: Text("change address",
@@ -126,7 +133,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const SchedulePickup(),
+                                builder: (context) =>  SchedulePickupScreen(),
                               ));
                         },
 

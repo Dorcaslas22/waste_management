@@ -100,8 +100,10 @@ class _LoginState extends State<Login> {
                              labelText: "Phone Number",
                                 border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(4),
+                                  borderSide: BorderSide(color: Color.fromRGBO(175, 175, 175, 1))
                    ),
                                ),
+
                    //       validator: (value){
                    //          if (value!.completeNumber.isNotEmpty){
                    //            return"Digit not complete";
@@ -120,6 +122,7 @@ class _LoginState extends State<Login> {
                                    labelText: "Password",
                                     border: OutlineInputBorder(
                                      borderRadius: BorderRadius.circular(8),
+                                        borderSide: BorderSide(color: Color.fromRGBO(175, 175, 175, 1))
                                       ),
                                        suffixIcon: InkWell(
                                            onTap: (){

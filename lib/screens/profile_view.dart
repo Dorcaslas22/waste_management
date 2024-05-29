@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ProfileView extends StatelessWidget {
   const ProfileView({super.key});
@@ -8,213 +9,134 @@ class ProfileView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: ListView(
-          children: [
-            Container(
+      body: Column(
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            decoration: BoxDecoration(
+              image: DecorationImage(image: AssetImage("assets/image1.png"),
+              ),
               color: Color.fromRGBO(13, 92, 70, 1),
-              child: Stack(
+            ),
+            // color: Color.fromRGBO(13, 92, 70, 1),
+            child: Column(
+              children: [
+                SizedBox(height: 40), // Adjust the top padding as needed
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(100),
+                  child: Image.asset('assets/Dorcas.jpg'),
+                ),
+                
+                SizedBox(height: 8),
+                Text(
+                  'Jane Doe',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                Text(
+                  '+234 9123456789',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
+                SizedBox(height: 20), // Adjust the bottom padding as needed
+              ],
+            ),
+          ),
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 16.0, vertical: 16.0),
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(255, 255, 255, 1),
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 2,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: ListView(
+                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
                 children: [
-                  Container(
-                    width: 390,
-                    height: 242,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage("assets/image1.png"),
-                      ),
-                    ),
-                    child:  Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        SizedBox(height: 40),
-                        CircleAvatar(
-                          radius: 32,
-                          backgroundImage: AssetImage(""),
-                        ),
-                        SizedBox(height: 5),
-                        Text("Jane Doe",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: 20,
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text("08025654785",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 16,
-                            color: Color.fromRGBO(255, 255, 255, 1),
-                          ),
-                        ),
-                        DraggableScrollableSheet(
-                            initialChildSize: 0.65,
-                            builder: (context, scrollController){
-                              return Container(
-                                padding: EdgeInsets.only(
-                                  top: 40,
-                                  left: 20,
-                                  right: 20,
-                                ),
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(8),
-                                    topRight: Radius.circular(8),
-                                  ),),
-                                child: ListView(
-                                  controller: scrollController,
-                                  children: [
-                                    TextField(
-                                      decoration: InputDecoration(
-                                        prefixIcon: Icon(Icons.account_circle),
-                                        hintText: "Edit Profile",
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              );
-                            }
-                        ),
-                        // SizedBox(height: 5),
-                        // Padding(
-                        //   padding: const EdgeInsets.all(0),
-                        //   child: Container(
-                        //     height: 500,
-                        //     width: 300,
-                        //     decoration: BoxDecoration(
-                        //         borderRadius: BorderRadius.only(
-                        //           topLeft: Radius.circular(8),
-                        //           topRight: Radius.circular(8),
-                        //         ),
-                        //         color: Color.fromRGBO(255, 255, 255, 1),
-                        //         boxShadow: [
-                        //           BoxShadow(
-                        //             spreadRadius: 0,
-                        //             blurRadius: 20,
-                        //             color: Color.fromRGBO(3, 18, 4, 0.1),
-                        //           ),
-                        //         ],
-                        //     ),
-                        //   ),
-                        // ),
-                        // Container(
-                        //   decoration: BoxDecoration(
-                        //     color: Color.fromRGBO(255, 255, 255, 1),
-                        //     borderRadius: BorderRadius.circular(10),
-                        //   ),
-                        //   child: Row(
-                        //     children: [
-                        //       Expanded(child:
-                        //       TextField(
-                        //         decoration: InputDecoration(
-                        //           prefixIcon: Icon(Icons.account_circle),
-                        //           hintText: "Edit Profile"
-                        //         ),
-                        //       ),),
-                        //     ],
-                        //   ),
-                        // ),
-                      ],
-                    ),
+                  ProfileListItem(
+                    assetPath: 'assets/profile.png',
+                    text: 'Edit profile',
+                    onTap: () {},
+                  ),
+                  ProfileListItem(
+                    assetPath: 'assets/payments.png',
+                    text: 'Payments',
+                    onTap: () {},
+                  ),
+                  ProfileListItem(
+                    assetPath: 'assets/activities.png',
+                    text: 'My activities',
+                    onTap: () {},
+                  ),
+                  ProfileListItem(
+                    assetPath: 'assets/Settings.png',
+                    text: 'Settings',
+                    onTap: () {},
+                  ),
+                  ProfileListItem(
+                    assetPath: 'assets/hel.png',
+                    text: 'Help center',
+                    onTap: () {},
+                  ),
+                  ProfileListItem(
+                    assetPath: 'assets/legal.png',
+                    text: 'Legal',
+                    onTap: () {},
+                  ),
+                  ProfileListItem(
+                    assetPath: 'assets/refer.png',
+                    text: 'Refer and earn',
+                    onTap: () {},
+                  ),
+                  ProfileListItem(
+                    assetPath: 'assets/log.png',
+                    text: 'Logout',
+                    onTap: () {},
                   ),
                 ],
               ),
             ),
-          ],
-        ),
+          )
+        ],
       ),
-      // body: Column(
-      //   children: [
-      //     Container(
-      //       color: Color.fromRGBO(13, 92, 70, 1),
-      //       child: Stack(
-      //         children: [
-      //           Container(
-      //             width: 390,
-      //             height: 242,
-      //             padding: EdgeInsets.all(0),
-      //             decoration: BoxDecoration(
-      //               image: DecorationImage(
-      //                   image: AssetImage("assets/image1.png"),
-      //               ),
-      //             ),
-      //             child: Column(
-      //               crossAxisAlignment: CrossAxisAlignment.center,
-      //               children: [
-      //                 SizedBox(height: 40),
-      //                 CircleAvatar(
-      //                   radius: 32,
-      //                   backgroundImage: AssetImage(""),
-      //                 ),
-      //                 SizedBox(height: 5),
-      //                 Center(
-      //                   child: Text("Jane Doe",
-      //                     style: TextStyle(
-      //                       fontWeight: FontWeight.w600,
-      //                       fontSize: 20,
-      //                       color: Color.fromRGBO(255, 255, 255, 1),
-      //                     ),
-      //                   ),
-      //                 ),
-      //                 SizedBox(height: 5),
-      //                 Center(
-      //                   child: Text("08025654785",
-      //                     style: TextStyle(
-      //                         fontWeight: FontWeight.w400,
-      //                         fontSize: 16,
-      //                         color: Color.fromRGBO(255, 255, 255, 1),
-      //                     ),
-      //                   ),
-      //                 ),
-      //                 DraggableScrollableSheet(
-      //                   initialChildSize: 0.65,
-      //                     builder: (context, scrollController){
-      //                       return Container(
-      //                         padding: EdgeInsets.only(
-      //                           top: 40,
-      //                           left: 20,
-      //                           right: 20,
-      //                         ),
-      //                           decoration: BoxDecoration(
-      //                           borderRadius: BorderRadius.only(
-      //                           topLeft: Radius.circular(8),
-      //                       topRight: Radius.circular(8),
-      //                       ),),
-      //                         child: ListView(
-      //                           controller: scrollController,
-      //                           children: [
-      //                             TextField(
-      //                               decoration: InputDecoration(
-      //                                 prefixIcon: Icon(Icons.account_circle),
-      //                                   hintText: "Edit Profile",
-      //                               ),
-      //                             )
-      //                           ],
-      //                         ),
-      //                       );
-      //                     }
-      //                 ),
-      // SizedBox(height: 5),
-      // Padding(
-      //   padding: const EdgeInsets.all(15.0),
-      //   child: Container(
-      //     height: 500,
-      //     width: 300,
-      //     decoration: BoxDecoration(
-      //         borderRadius: BorderRadius.only(
-      //           topLeft: Radius.circular(8),
-      //           topRight: Radius.circular(8),
-      //         ),
-      //         color: Color.fromRGBO(255, 255, 255, 1),
-      //         boxShadow: [
-      //           BoxShadow(
-      //             spreadRadius: 0,
-      //             blurRadius: 20,
-      //             color: Color.fromRGBO(3, 18, 4, 0.1),
-      //           )
-      //         ]
-      //     ),
-      //   ),
-      // )
+    );
+  }
+}
+
+class ProfileListItem extends StatelessWidget {
+  final String assetPath;
+  final String text;
+  final VoidCallback onTap;
+
+  ProfileListItem({required this.assetPath, required this.text, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      margin: EdgeInsets.symmetric(vertical: 6),
+      child: ListTile(
+        leading: Image.asset(assetPath, width: 24, height: 24), // Adjust the size as needed
+        title: Text(text,style: TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 16,
+          color: Color.fromRGBO(47, 47, 47, 1),
+        ),),
+        trailing: Icon(Icons.arrow_forward_ios,  color: Color.fromRGBO(109, 109, 109, 1),size: 20,),
+        onTap: onTap,
+      ),
     );
   }
 }

@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 import '../icons.dart';
-import '../screens/explore_view_screen.dart';
+import '../screens/explore_screens/explore_view_screen.dart';
 import '../screens/home_view.dart';
-import '../screens/recycle_view_screen.dart';
-import '../screens/waste_view_screen.dart';
+import '../screens/profile_view.dart';
+import '../screens/recycle_screen/recycle_view_screen.dart';
+import '../screens/waste_screen/waste_view_screen.dart';
 
 class HomeScreen extends StatefulWidget{
 
@@ -18,7 +19,7 @@ class _HomePageState extends State<HomeScreen> {
     WasteViewScreen(),
     RecycleViewScreen(),
     ExploreViewScreen(),
-    // ProfileView(),
+    ProfileView(),
   ];
   var selectedIndex = 0;
 

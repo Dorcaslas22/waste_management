@@ -1,10 +1,11 @@
 
 
 import 'package:flutter/material.dart';
-import 'package:waste_management/screens/schedule_screen.dart';
-import 'package:waste_management/screens/waste_dropoff.dart';
+import 'package:waste_management/screens/recycle_screen/schedule_screen.dart';
+import 'package:waste_management/screens/waste_screen/waste_dropoff.dart';
+import 'package:waste_management/screens/waste_screen/waste_schedule.dart';
 
-import '../widgets/expanded_tile.dart';
+import '../../widgets/expanded_tile.dart';
 
 class WasteViewScreen extends StatefulWidget {
   const WasteViewScreen({super.key});
@@ -66,7 +67,7 @@ class _WasteViewScreenState extends State<WasteViewScreen> {
             InkWell(
               onTap: (){
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ScheduleScreen()));
+                    MaterialPageRoute(builder: (context) => const WasteSchedule()));
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),
@@ -113,8 +114,8 @@ class _WasteViewScreenState extends State<WasteViewScreen> {
             SizedBox(height: 20),
             InkWell(
               onTap: (){
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const WasteDropOff()));
+                // Navigator.push(context,
+                //     MaterialPageRoute(builder: (context) => const WasteSchedule()));
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15.0),

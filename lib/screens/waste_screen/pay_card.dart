@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:waste_management/screens/schedule_pickup.dart';
-import 'package:waste_management/screens/schedule_pickup_2.dart';
+import 'package:waste_management/screens/waste_screen/schedule_pickup.dart';
+import 'package:waste_management/screens/recycle_screen/schedule_pickup_2.dart';
 
 class PayCard extends StatefulWidget {
   const PayCard({super.key});

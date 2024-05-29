@@ -1,8 +1,10 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:waste_management/screens/recycle_screen/drop_down.dart';
+import 'package:waste_management/screens/recycle_screen/recycle_schedule_pickup.dart';
 
-import '../widgets/expanded_tile_1.dart';
+import '../../widgets/expanded_tile_1.dart';
 
 class RecycleViewScreen extends StatefulWidget {
   const RecycleViewScreen({super.key});
@@ -31,40 +33,49 @@ class _RecycleViewScreenState extends State<RecycleViewScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: Container(
-                height: 100,
-                width: 342,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Color.fromRGBO(225, 193, 69, 1),width: 1),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    // mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Schedule pickup",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                              color: Color.fromRGBO(47, 47, 47, 1),
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>  DropDown(),
+                      ));
+                },
+                child: Container(
+                  height: 100,
+                  width: 342,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(color: Color.fromRGBO(225, 193, 69, 1),width: 1),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      // mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("Schedule pickup",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w600,
+                                fontSize: 16,
+                                color: Color.fromRGBO(47, 47, 47, 1),
+                              ),
                             ),
-                          ),
-                          Image.asset("assets/car.png"),
-                        ],
-                      ),
-                      Text("Arrange for a waste pick-up service at your location and get paid for recyclables",
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
+                            Image.asset("assets/car.png"),
+                          ],
                         ),
-                      ),
-                    ],
+                        Text("Arrange for a waste pick-up service at your location and get paid for recyclables",
+                          style: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

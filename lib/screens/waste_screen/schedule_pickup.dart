@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/cardwidget.dart';
+import '../../widgets/cardwidget.dart';
 
 class SchedulePickup extends StatefulWidget {
   const SchedulePickup({super.key});

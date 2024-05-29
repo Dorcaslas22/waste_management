@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:waste_management/onboarding/onboarding_controller.dart';
 
+import '../login_screen/login.dart';
 import '../signup_screen/register.dart';
 import '../widgets/onboarding_nextbutton.dart';
 import '../widgets/onboarding_skip.dart';
@@ -83,8 +84,8 @@ class _ScreenOnboardingState extends State<ScreenOnboarding> {
                       ),
                       GestureDetector(
                         onTap: (){
-                          // Navigator.push(context,
-                          //     MaterialPageRoute(builder: (context) => const Login()));
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) =>  Login()));
                         },
                         child: const Text("Login",
                           style: TextStyle(

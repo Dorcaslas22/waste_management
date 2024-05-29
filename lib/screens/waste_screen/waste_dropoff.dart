@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:waste_management/screens/inputfield2.dart';
-import 'package:waste_management/screens/schedule_pickup.dart';
-import 'package:waste_management/screens/success_schedule.dart';
+import 'package:waste_management/screens/waste_screen/schedule_pickup.dart';
+import 'package:waste_management/widgets/custom_dialog_widget.dart';
 
 class WasteDropOff extends StatefulWidget {
   const WasteDropOff({super.key,});
@@ -411,11 +411,11 @@ class _WasteDropOffState extends State<WasteDropOff> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         onPressed: ()  {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SuccessSchedule(),
-                              ));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) => const CustomDialogWidget(),
+                          //     ));
                         },
 
 

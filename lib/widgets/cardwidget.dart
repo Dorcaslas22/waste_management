@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:waste_management/screens/pay_card.dart';
+import 'package:waste_management/screens/waste_screen/pay_card.dart';
 
 class CardWidget extends StatefulWidget {
   const CardWidget({super.key});

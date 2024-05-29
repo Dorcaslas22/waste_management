@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:waste_management/screens/community_initiatives.dart';
-import 'package:waste_management/screens/learning_screen.dart';
+import 'package:waste_management/screens/explore_screens/community_initiatives.dart';
+import 'package:waste_management/screens/explore_screens/learning_screen.dart';
 
-import '../widgets/community_widget.dart';
-import '../widgets/newsandevent.dart';
-import '../widgets/seeAll.dart';
+import '../../widgets/community_widget.dart';
+import '../../widgets/newsandevent.dart';
+import '../../widgets/seeAll.dart';
 
 class ExploreViewScreen extends StatelessWidget {
   const ExploreViewScreen({super.key});

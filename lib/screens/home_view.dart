@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:waste_management/screens/profile_view.dart';
-import 'package:waste_management/screens/recycle_view_screen.dart';
-import 'package:waste_management/screens/waste_view_screen.dart';
+import 'package:waste_management/screens/recycle_screen/recycle_view_screen.dart';
+import 'package:waste_management/screens/waste_screen/waste_view_screen.dart';
 import 'package:waste_management/services/notification.dart';
 import '../icons.dart';
 import '../widgets/learning_widget.dart';
 import '../widgets/upcoming_widget.dart';
-import 'explore_view_screen.dart';
+import 'explore_screens/explore_view_screen.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -233,27 +233,27 @@ class _HomeViewState extends State<HomeView> {
                   ),),
               ],
             ),
-            InkWell(
-              onTap: (){
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const WasteViewScreen(),
-                    ));
-              },
-              child: Padding(padding: EdgeInsets.all(15),
-                child: Center(
-                  child: Wrap(
-                    spacing: 2.0,
-                    runSpacing: 8.0,
-                    children: [
-                      SizedBox(
-                        width: 163.0,
-                        height: 98.0,
-                        child: Card(
-                          color:  Color.fromRGBO(255, 243, 218, 0.7),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4)
+            Padding(padding: EdgeInsets.all(15),
+              child: Center(
+                child: Wrap(
+                  spacing: 6.0,
+                  runSpacing: 8.0,
+                  children: [
+                    SizedBox(
+                      width: 163.0,
+                      height: 98.0,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const WasteViewScreen(),
+                              ));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color: Color.fromRGBO(255, 243, 218, 0.7),
                           ),
                           child:  Center(
                             child: Padding(padding: EdgeInsets.all(8),
@@ -275,13 +275,22 @@ class _HomeViewState extends State<HomeView> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 163.0,
-                        height: 98.0,
-                        child: Card(
-                          color:  Color.fromRGBO(218, 255, 255, 0.7),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4)
+                    ),
+                    SizedBox(
+                      width: 163.0,
+                      height: 98.0,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const RecycleViewScreen(),
+                              ));
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color:  Color.fromRGBO(218, 255, 255, 0.7),
                           ),
                           child:  Center(
                             child: Padding(padding: EdgeInsets.all(8),
@@ -303,13 +312,16 @@ class _HomeViewState extends State<HomeView> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 163.0,
-                        height: 98.0,
-                        child: Card(
-                          color:  Color.fromRGBO(218, 230, 255, 0.7),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4)
+                    ),
+                    SizedBox(
+                      width: 163.0,
+                      height: 98.0,
+                      child: InkWell(
+                        onTap: (){},
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color:  Color.fromRGBO(218, 230, 255, 0.7),
                           ),
                           child:  Center(
                             child: Padding(padding: EdgeInsets.all(8),
@@ -331,13 +343,16 @@ class _HomeViewState extends State<HomeView> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: 163.0,
-                        height: 98.0,
-                        child: Card(
-                          color:  Color.fromRGBO(255, 218, 249, 0.7),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(4)
+                    ),
+                    SizedBox(
+                      width: 163.0,
+                      height: 98.0,
+                      child: InkWell(
+                        onTap: (){},
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                            color:  Color.fromRGBO(255, 218, 249, 0.7),
                           ),
                           child:  Center(
                             child: Padding(padding: EdgeInsets.all(8),
@@ -359,8 +374,8 @@ class _HomeViewState extends State<HomeView> {
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),

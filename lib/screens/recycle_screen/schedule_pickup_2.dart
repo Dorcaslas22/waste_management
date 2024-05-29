@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:waste_management/screens/success_schedule.dart';
+import 'package:waste_management/widgets/custom_dialog_widget.dart';
 
-import '../widgets/schedulewidget.dart';
+import '../../widgets/schedulewidget.dart';
 
 class SchedulePickup2 extends StatefulWidget {
   const SchedulePickup2({super.key});
@@ -175,7 +175,7 @@ class _SchedulePickup2State extends State<SchedulePickup2> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const SuccessSchedule(),
+                        builder: (context) => const CustomDialogWidget(),
                       ));
                 },
                 child: Container(
